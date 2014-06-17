@@ -585,7 +585,7 @@ margin on the iframe, cause it breaks stuff. */
     width: 320px;
     height: 100vh;
     z-index: 100;
-    background-color: #22313F;
+    background-color: #0B4912;
     text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
     overflow-y: auto;
 }
@@ -631,7 +631,7 @@ main
     margin-top: 1px;
     right: 10px;
     position: absolute; /* must be set to absolute */
-} 
+}
 
 #results
 {
