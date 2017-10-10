@@ -7,8 +7,8 @@
 {{#author}}
     <section class="author-profile">
         <div class="author-cover" {{#if cover_image}}style="background-image: url({{cover_image}}){{/if}}">
-            {{#if image}}
-                <img class="author-image" alt="{{name}}'s Picture" src="{{image}}">
+            {{#if profile_image}}
+                <img class="author-image" alt="{{name}}'s Picture" src="{{img_url profile_image}}">
             {{/if}}
         </div>
 
