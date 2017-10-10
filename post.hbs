@@ -7,8 +7,8 @@
     <article class="{{post_class}}">
 
         <header class="post-header">
-            {{#if image}}
-                <img class="post-cover" src="{{image}}" alt="{{title}}">
+            {{#if feature_image}}
+                <img class="post-cover" src="{{img_url feature_image}}" alt="{{title}}">
             {{/if}}
 
             <h1 class="post-title">{{title}}</h1>
@@ -32,9 +32,9 @@
             {{!-- Everything inside the #author tags pulls data from the author --}}
             {{#author}}
 
-                {{#if image}}
+                {{#if profile_image}}
                 <figure class="author-image">
-                    <a class="img" href="{{url}}" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></a>
+                    <a class="img" href="{{url}}" style="background-image: url({{img_url profile_image}})"><span class="hidden">{{name}}'s Picture</span></a>
                 </figure>
                 {{/if}}
 
@@ -100,7 +100,7 @@
         {{!--
         <aside class="read-next">
             {{#next_post}}
-            <a class="read-next-story {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
+            <a class="read-next-story {{#if feature_image}}" style="background-image: url({{img_url feature_image}}){{else}}no-cover{{/if}}" href="{{url}}">
                 <section class="read-next-post">
                     <h2>{{title}}</h2>
                     {{excerpt words="19"}}&hellip;</p>
@@ -108,7 +108,7 @@
             </a>
             {{/next_post}}
             {{#prev_post}}
-            <a class="read-next-story prev {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
+            <a class="read-next-story prev {{#if feature_image}}" style="background-image: url({{img_url feature_image}}){{else}}no-cover{{/if}}" href="{{url}}">
                 <section class="read-next-post">
                     <h2>{{title}}</h2>
                     <p>{{excerpt words="19"}}&hellip;</p>
