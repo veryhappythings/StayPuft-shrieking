@@ -1,4 +1,4 @@
-Do you need help or have a question? Please come chat in our forum: https://forum.ghost.org 👫.
+**Please check the [FAQ](https://github.com/dlecina/StayPuft#faq) before creating an issue.**
 
 If you're filing a bug 🐛, please include the following information:
 
@@ -13,7 +13,7 @@ If you're filing a bug 🐛, please include the following information:
 
 ### Technical details
 
-* Casper Version:
+* StayPuft Version:
 * Ghost Version:
 * Browser Version:
 * OS Version:
