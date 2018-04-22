@@ -8,7 +8,7 @@
         <a class="post-card-content-link" href="{{url}}">
             <header class="post-card-header">
                 {{#if primary_tag}}
-                    <span class="post-card-tags">{{primary_tag.name}}</span>
+                    <span class="post-card-tags"><i class='fa fa-tag'></i> {{primary_tag.name}}</span>
                 {{/if}}
                 <h2 class="post-card-title">{{title}}</h2>
             </header>
@@ -18,24 +18,17 @@
         </a>
         <footer class="post-card-meta">
 
-            <ul class="author-list">
-            {{#foreach authors}}
-                <li class="author-list-item">
+            <span class="post-time">
+                <i class='fa fa-calendar'></i>
+                <time datetime="{{date format="YYYY-MM-DD"}}" class="timeago">{{date timeago="true"}}</time>
+                <time datetime="{{date format="YYYY-MM-DD"}}" class="fulldate">{{date format="MMMM Do, YYYY"}}</time>
+            </span>
 
-                    <div class="author-name-tooltip">
-                        {{name}}
-                    </div>
-
-                    {{#if profile_image}}
-                        <a href="{{url}}" class="static-avatar"><img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" /></a>
-                    {{else}}
-                        <a href="{{url}}" class="static-avatar author-profile-image">{{> "icons/avatar"}}</a>
-                    {{/if}}
-                </li>
-            {{/foreach}}
-            </ul>
-
+            {{#if featured}}
+            <span class="featured-badge">Featured</span>
+            {{else}}
             <span class="reading-time">{{reading_time}}</span>
+            {{/if}}
 
         </footer>
     </div>

@@ -22,3 +22,6 @@ projectFilesBackup
 .DS_Store
 
 dist/
+
+# StayPuft
+partials/custom/nav-external.hbs
