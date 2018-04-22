@@ -25,6 +25,14 @@ $ yarn dev
 
 Now you can edit `/assets/css/` files, which will be compiled to `/assets/built/` automatically.
 
+You can keep Ghost running in your [local development environment](https://docs.ghost.org/docs/install-local) by running this from Ghost's root directory:
+
+```bash
+nodemon current/index.js --watch content/themes/StayPuft --ext hbs,js,css
+```
+
+## Releasing
+
 The `zip` Gulp task packages the theme files into `dist/<theme-name>.zip`, which you can then upload to your site.
 
 ```bash
