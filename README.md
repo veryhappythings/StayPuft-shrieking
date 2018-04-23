@@ -2,7 +2,7 @@
 
 A programming-oriented theme for [Ghost](https://github.com/TryGhost/Ghost). This is the latest development version of StayPuft. If you're just looking to download the latest release, head over to the [releases](https://github.com/dlecina/StayPuft/releases) page.
 
-![screenshot-desktop](https://user-images.githubusercontent.com/120485/27221326-1e31d326-5280-11e7-866d-82d550a7683b.jpg)
+![screenshot-mockup](/assets/screenshots/screenshot-mockup.png?raw=true)
 
 ## Features
 

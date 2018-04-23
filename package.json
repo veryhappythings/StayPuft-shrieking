@@ -9,8 +9,8 @@
     },
     "license": "MIT",
     "screenshots": {
-        "desktop": "assets/screenshot-desktop.jpg",
-        "mobile": "assets/screenshot-mobile.jpg"
+        "desktop": "assets/screenshots/screenshot-desktop.png",
+        "mobile": "assets/screenshots/screenshot-mobile.png"
     },
     "scripts": {
       "dev": "gulp",
