@@ -18,7 +18,7 @@ A programming-oriented theme for [Ghost](https://github.com/TryGhost/Ghost). Thi
 This theme is being used in my [blog](http://davidlecina.com/).
 
 *  ["Welcome to Ghost"](http://davidlecina.com/blog/welcome-to-ghost/).
-*  ["Using the Ghost editor"](http://davidlecina.com/blog/the-editor//).
+*  ["Using the Ghost editor"](http://davidlecina.com/blog/the-editor/).
 *  ["Advanced Markdown tips"](http://davidlecina.com/blog/advanced-markdown/).
 *  [Prism demo](http://davidlecina.com/blog/prism-demo/).
 
