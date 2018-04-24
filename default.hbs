@@ -34,6 +34,11 @@
                 {{!-- Header --}}
                 {{> "site-header"}}
             </div>
+            <div class="search-form">
+                <div class="search-form-content">
+                    {{> "search-form"}}
+                </div>
+            </div>
             <div class="landscape">
                 {{!-- Footer (Landscape mode only)--}}
                 {{> "site-footer" }}
@@ -48,6 +53,9 @@
                     {{navigation}}
                     {{/if}}
                 </nav>
+                <div class="search-results">
+                    {{> "search-results"}}
+                </div>
                 <div class="main-body">
                     {{{body}}}
                 </div>
@@ -66,6 +74,10 @@
     {{!-- jQuery + Fitvids, which makes all video embeds responsive --}}
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
+
+    {{!-- ghostHunter --}}
+    <script type="text/javascript" src="{{asset "js/jquery.ghosthunter.min.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/jquery.ghosthunter-staypuft.js"}}"></script>
 
     {{#if pagination.pages}}
     <script>

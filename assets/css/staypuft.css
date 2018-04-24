@@ -20,6 +20,8 @@
     --sidebar-color: #22313F;
     --sidebar-link-color: #9ebec3;
     --sidebar-link-hover-color: white;
+    --read-next-color: rgb(0,40,60);
+    --search-placeholder-color: color(white a(0.5));
 }
 
 /* Overrides
@@ -61,7 +63,7 @@ a:hover {
 }
 
 #sidebar .site-header-content {
-    padding: 2em;
+    padding: 1em;
     min-height: initial;
 }
 
@@ -142,12 +144,68 @@ a:hover {
 
 .main-nav ul {
     margin: 0;
-    flex-direction: row-reverse;
+    flex-direction: row;
 }
 
 .main-nav li {
-    background-color: var(--sidebar-color);
-    margin-left: 12px;
+    background-color: var(--read-next-color);
+    margin-right: 12px;
+}
+
+.search-form {
+    width: 100%;
+    margin: 0 0 1em 0;
+    padding: 0 10%;
+}
+
+.search-form form {
+    position: relative;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.search-form input {
+    width: calc(100% - 45px);
+    height: 40px;
+    padding-left: 45px;
+    border: none;
+    border-radius: 3px;
+    background: color(black a(0.2));
+    color: white;
+}
+
+.search-form input::placeholder {
+    color: var(--search-placeholder-color);
+}
+
+.search-form i {
+    position: absolute;
+    top: 33%;
+    left: 17px;
+    z-index: 1;
+    color: var(--search-placeholder-color);
+}
+
+.search-results {
+    display: none;
+    margin-top: 40px;
+}
+
+.search-results .read-next-card {
+    margin: 0;
+    text-align: center;
+}
+
+.search-results .read-next-card li:first-of-type {
+    margin-top: 1em;
+}
+
+.search-results .read-next-card li:last-of-type {
+    margin-bottom: 1em;
+}
+
+.search-results .read-next-card li:last-of-type a {
+    border: none;
 }
 
 .home-template .featured-posts,
@@ -359,8 +417,8 @@ a.post-card-content-link:hover {
         flex-direction: row;
     }
 
-    .site-logo {
-        max-height: 80px;
+    #sidebar .site-header-picture {
+        max-width: 140px;
     }
 
     .main-nav {
@@ -382,7 +440,7 @@ a.post-card-content-link:hover {
 
     .home-template .featured-posts,
     .home-template .post-feed {
-        margin-top: 0;
+        margin-top: 5vw;
         padding-top: 0;
     }
 

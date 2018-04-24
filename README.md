@@ -9,7 +9,7 @@ A programming-oriented theme for [Ghost](https://github.com/TryGhost/Ghost). Thi
 * Responsive design.
 * Custom [⚡AMP](https://blog.ghost.org/custom-amp-themes/) theme ([ℹ️](https://themes.ghost.org/docs/amp)).
 * ~~Post comments using [Disqus](http://disqus.com/).~~
-* ~~In-site search using [GhostHunter](https://github.com/i11ume/ghostHunter).~~
+* In-site search using [GhostHunter](https://github.com/i11ume/ghostHunter).
 * Support for [Font Awesome](https://github.com/FortAwesome/Font-Awesome).
 * ~~Syntax highlighting using [Prism](https://github.com/LeaVerou/prism/).~~
 
