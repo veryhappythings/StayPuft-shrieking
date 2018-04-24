@@ -358,6 +358,10 @@ a.post-card-content-link:hover {
     margin-top: 0;
 }
 
+.error-template .site-footer-subscribe {
+    display: none;
+}
+
 .error-message {
     margin-bottom: 7vw;
 }
