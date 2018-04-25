@@ -357,6 +357,14 @@ a.post-card-content-link:hover {
     margin-top: 0;
 }
 
+.error-template .site-main {
+    padding: 5vw 4vw;
+}
+
+.error-template .site-main .inner {
+    max-width: 980px;
+}
+
 .error-template .site-footer-subscribe {
     display: none;
 }
