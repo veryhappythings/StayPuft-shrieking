@@ -17,10 +17,9 @@
     --link-color: #273c75;
     --link-hover-color: #00a8ff;
     --sidebar-width: 320px;
-    --sidebar-color: #22313F;
+    --sidebar-color: #002a3e;
     --sidebar-link-color: #9ebec3;
     --sidebar-link-hover-color: white;
-    --read-next-color: rgb(0,40,60);
     --search-placeholder-color: color(white a(0.5));
 }
 
@@ -148,7 +147,7 @@ a:hover {
 }
 
 .main-nav li {
-    background-color: var(--read-next-color);
+    background-color: var(--sidebar-color);
     margin-right: 12px;
 }
 
@@ -416,6 +415,10 @@ a.post-card-content-link:hover {
 @media (max-width: 1279px) {
 
     .landscape { display: none; }
+
+    #sidebar .site-header {
+        padding: 0;
+    }
 
     #sidebar .site-header-content {
         flex-direction: row;
