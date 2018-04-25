@@ -32,7 +32,7 @@ If the current version of StayPuft is not compatible with the version of Ghost y
 
 * Clone the repository or download the [latest release](https://github.com/dlecina/StayPuft/releases/latest) and extract it.
 * Copy `partials/custom/nav-external.hbs.example` to `partials/custom/nav-external.hbs` and customize it with your own external links.
-* Copy `partials/custom/disqus.hbs.example` to `partials/custom/disqus.hbs` and customize it with your [Disqus shortname](https://help.disqus.com/installation/whats-a-shortname).
+* (Optional) Copy `partials/custom/disqus.hbs.example` to `partials/custom/disqus.hbs` and customize it with your [Disqus shortname](https://help.disqus.com/installation/whats-a-shortname).
 * Run `yarn zip` in the theme's root directory to create `dist/StayPuft.zip`.
 * Go to your blog's Settings page (typically `/admin` or `/ghost`).
 * In the Design tab, upload and activate StayPuft.
@@ -47,6 +47,14 @@ If the current version of StayPuft is not compatible with the version of Ghost y
 2. **Where should I discuss other topics?**
 
   To discuss other topics, please find an appropriate post in my blog's [Staypuft tag](http://davidlecina.com/blog/tag/staypuft/) and post a comment there.
+
+3. **How can I disable comments?**
+
+  To disable comments, simply remove the line `{{> "post-comments"}}` from `post.hbs` and `page.hbs`. You do not need `disqus.hbs` in this case.
+
+4. **How can I disable comments only on pages?**
+
+  To disable comments only on pages, simply remove the line `{{> "post-comments"}}` from `page.hbs`.
 
 ## Development
 
