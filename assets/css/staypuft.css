@@ -287,6 +287,11 @@ a.post-card-content-link:hover {
     margin-top: 0;
 }
 
+.post-full-comments {
+    margin: 2em auto;
+    padding: 0 100px 0;
+}
+
 .read-next-card-header {
     padding-top: 0;
 }
@@ -444,6 +449,12 @@ a.post-card-content-link:hover {
         font-size: 0.8em;
     }
 
+}
+
+@media (max-width: 1170px) {
+    .post-full-comments {
+        padding: 0 7vw 0;
+    }
 }
 
 @media (max-width: 650px) {

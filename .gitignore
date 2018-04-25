@@ -25,3 +25,4 @@ dist/
 
 # StayPuft
 partials/custom/nav-external.hbs
+partials/custom/disqus.hbs
