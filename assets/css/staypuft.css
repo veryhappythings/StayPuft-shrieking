@@ -148,17 +148,27 @@ a:hover {
 }
 
 .main-nav {
-    margin: 0;
+    margin: 0 0 1em;
+    padding: 0 10%;
 }
 
 .main-nav ul {
     margin: 0;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .main-nav li {
-    background-color: var(--sidebar-color);
-    margin-right: 12px;
+    margin: 2px 0;
+    background: rgba(0,0,0,.2);
+    text-transform: unset;
+}
+
+.main-nav li a {
+    color: var(--search-placeholder-color);
+}
+
+.main-nav li a:hover {
+    color: var(--sidebar-link-hover-color);
 }
 
 .search-form {
@@ -476,12 +486,20 @@ a.post-card-content-link:hover {
         max-width: 140px;
     }
 
-    .main-nav {
-        margin-top: 1em;
+    .main-nav ul {
+        flex-direction: row;
     }
 
     .main-nav li {
-        font-size: 0.8em;
+        margin: 0 2px;
+    }
+
+    .main-nav li:first-child {
+        margin-left: 0;
+    }
+
+    .main-nav li:last-child {
+        margin-right: 0;
     }
 
 }

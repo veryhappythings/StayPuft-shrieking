@@ -39,6 +39,11 @@
                     {{> "search-form"}}
                 </div>
             </div>
+            <nav class="main-nav">
+                {{#if @blog.navigation}}
+                {{navigation}}
+                {{/if}}
+            </nav>
             <div class="landscape">
                 {{!-- Footer (Landscape mode only)--}}
                 {{> "site-footer" }}
@@ -48,11 +53,6 @@
         {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
         <main id="site-main" class="site-main outer">
             <div class="inner">
-                <nav class="main-nav">
-                    {{#if @blog.navigation}}
-                    {{navigation}}
-                    {{/if}}
-                </nav>
                 <div class="search-results">
                     {{> "search-results"}}
                 </div>
