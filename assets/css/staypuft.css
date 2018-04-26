@@ -423,6 +423,38 @@ a.post-card-content-link:hover {
     margin-bottom: 7vw;
 }
 
+pre,
+code,
+.post-full-content pre,
+.post-full-content code,
+:not(pre) > code[class*="language-"],
+pre[class*="language-"],
+.post-full-content :not(pre) > code[class*="language-"],
+.post-full-content pre[class*="language-"] {
+    background: var(--sidebar-color);
+    color: var(--whitegrey);
+    border-radius: var(--radius5);
+}
+
+pre,
+pre[class*="language-"],
+.post-full-content pre,
+.post-full-content pre[class*="language-"] {
+    margin: 1.5em 0;
+}
+
+p + pre,
+.post-full-content p + pre,
+.post-full-content p + pre[class*="language-"] {
+    margin-top: -1em;
+}
+
+pre + pre,
+.post-full-content pre + pre,
+.post-full-content pre + pre[class*="language-"] {
+    margin-top: 0;
+}
+
 /* Landscape Mode
 /* ---------------------------------------------------------- */
 
