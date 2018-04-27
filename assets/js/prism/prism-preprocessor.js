@@ -16,14 +16,15 @@
         processDataStart(code, pre);
         processDataLine(code, pre);
         processDataLineOffset(code, pre);
+        processDataSrc(code, pre);
     }
 
     /**
      * Apparently, Ghost removes everything after the first space in <code>'s class attribute.
-     * As a workaround, I use "." as a separator in Markdown and replace it with spaces here.
+     * As a workaround, I use "|" as a separator in Markdown and replace it with spaces here.
      */
     function processClass(code) {
-        code.attr('class', code.attr('class').replace(/\./g, " "));
+        code.attr('class', code.attr('class').replace(/\|/g, " "));
     }
 
     /* Process line-numbers */
@@ -33,17 +34,22 @@
 
     /* Process data-start */
     function processDataStart(code, pre) {
-        moveToPreAttr(/(data-start)="([0-9]+)"/, code, pre);
+        moveToPreAttr(/(data-start)="(.+?)"/, code, pre);
     }
 
     /* Process data-line */
     function processDataLine(code, pre) {
-        moveToPreAttr(/(data-line)="(([0-9]|-|,)+)"/, code, pre);
+        moveToPreAttr(/(data-line)="(.+?)"/, code, pre);
     }
 
     /* Process data-line-offset */
     function processDataLineOffset(code, pre) {
-        moveToPreAttr(/(data-line-offset)="([0-9]+)"/, code, pre);
+        moveToPreAttr(/(data-line-offset)="(.+?)"/, code, pre);
+    }
+
+    /* Process data-src */
+    function processDataSrc(code, pre) {
+        moveToPreAttr(/(data-src)="(.+?)"/, code, pre);
     }
 
     /* Removes a class from <code> and adds it to <pre> */
