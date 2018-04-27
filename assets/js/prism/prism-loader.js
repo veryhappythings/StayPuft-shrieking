@@ -28,43 +28,40 @@
 
     /* Process line-numbers */
     function processLineNumbers(code, pre) {
-        // Remove line-numbers from code and add it to pre
-        if (code.attr('class').indexOf("line-numbers") >= 0) {
-            code.attr('class', code.attr('class').replace("line-numbers", ""));
-            pre.addClass("line-numbers");
-        }
+        moveToPreClass("line-numbers", code, pre);
     }
 
     /* Process data-start */
     function processDataStart(code, pre) {
-        // Remove data-start from code class and add it to pre as an attribute
-        var regex = /data-start="([0-9]+)"/;
-        var match = code.attr('class').match(regex);
-        if (match) {
-            code.attr('class', code.attr('class').replace(regex, ""));
-            pre.attr('data-start', match[1]);
-        }
+        moveToPreAttr(/(data-start)="([0-9]+)"/, code, pre);
     }
 
     /* Process data-line */
     function processDataLine(code, pre) {
-        // Remove data-line from code class and add it to pre as an attribute
-        var regex = /data-line="(([0-9]|-|,)+)"/;
-        var match = code.attr('class').match(regex);
-        if (match) {
-            code.attr('class', code.attr('class').replace(regex, ""));
-            pre.attr('data-line', match[1]);
-        }
+        moveToPreAttr(/(data-line)="(([0-9]|-|,)+)"/, code, pre);
     }
 
     /* Process data-line-offset */
     function processDataLineOffset(code, pre) {
-        // Remove data-line-offset from code class and add it to pre as an attribute
-        var regex = /data-line-offset="([0-9]+)"/;
+        moveToPreAttr(/(data-line-offset)="([0-9]+)"/, code, pre);
+    }
+
+    /* Removes a class from <code> and adds it to <pre> */
+    function moveToPreClass(clazz, code, pre) {
+        if (code.attr('class').indexOf(clazz) >= 0) {
+            code.attr('class', code.attr('class').replace(clazz, ""));
+            pre.addClass(clazz);
+        }
+    }
+
+    /* Moves an attribute from <code> class to <pre> attribute */
+    function moveToPreAttr(regex, code, pre) {
         var match = code.attr('class').match(regex);
         if (match) {
+            var attr = match[1]; // Make sure regex sets this!!
+            var value = match[2]; // Make sure regex sets this!!
             code.attr('class', code.attr('class').replace(regex, ""));
-            pre.attr('data-line-offset', match[1]);
+            pre.attr(attr, value);
         }
     }
 
