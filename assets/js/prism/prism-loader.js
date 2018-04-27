@@ -1,68 +1,71 @@
+(function loadPrism() {
 
-function isNumber(n) {
-  return !isNaN(parseFloat(n)) && isFinite(n);
-}
-function prism_markdown(){
-    // All code elements with class language-* or lang-*
-    var codeEls = $('pre > code[class*=lang-], pre > code[class*=language-]');
-    if (codeEls.length) {
-        // For each code element
-        codeEls.each(function() {
-            var pre = $(this).parent();
-            // Process line-numbers
-            if ($(this).attr('class').indexOf("line-numbers") >= 0) {
-                // remove line-numbers from code and add it to pre
-                $(this).attr('class', $(this).attr('class').replace("line-numbers", ""));
-                pre.attr('class', pre.attr('class') + ' ' + "line-numbers");
-
-            } 
-            // Process data-start
-            if ($(this).attr('class').indexOf("data-start=") >= 0) {
-                idx_start = $(this).attr('class').indexOf("data-start=") + 11;
-                idx_end = $(this).attr('class').indexOf(" ",idx_start);
-                if (idx_end == -1) {
-                    idx_end = $(this).attr('class').length;
-                }
-                start = $(this).attr('class').substring(idx_start, idx_end); 
-                if (isNumber(start)) {
-                    pre.attr('data-start', start);
-                }
-            }
-            // Process data-start
-            if ($(this).attr('class').indexOf("data-start=") >= 0) {
-                idx_start = $(this).attr('class').indexOf("data-start=") + 11;
-                idx_end = $(this).attr('class').indexOf(" ",idx_start);
-                if (idx_end == -1) {
-                    idx_end = $(this).attr('class').length;
-                }
-                start = $(this).attr('class').substring(idx_start, idx_end); 
-                if (isNumber(start)) {
-                    pre.attr('data-start', start);
-                }
-            }
-            // Process data-line
-            if ($(this).attr('class').indexOf("data-line=") >= 0) {
-                idx_start = $(this).attr('class').indexOf("data-line=") + 10;
-                idx_end = $(this).attr('class').indexOf(" ",idx_start);
-                if (idx_end == -1) {
-                    idx_end = $(this).attr('class').length;
-                }
-                lines = $(this).attr('class').substring(idx_start, idx_end); 
-                pre.attr('data-line', lines);
-            }
-            // Process data-line-offset
-            if ($(this).attr('class').indexOf("data-line-offset=") >= 0) {
-                idx_start = $(this).attr('class').indexOf("data-line-offset=") + 17;
-                idx_end = $(this).attr('class').indexOf(" ",idx_start);
-                if (idx_end == -1) {
-                    idx_end = $(this).attr('class').length;
-                }
-                offset = $(this).attr('class').substring(idx_start, idx_end); 
-                if (isNumber(start)) {
-                    pre.attr('data-line-offset', offset);
-                }
-            }
-        });
+    /* Process all <code> elements */
+    var codeElements = $('pre > code[class*=lang-], pre > code[class*=language-]'); // All code elements with class language-* or lang-*
+    if (codeElements.length) {
+        codeElements.each(processCodeElement);
     };
-}
-prism_markdown()
+
+    /* Process a <code> element */
+    function processCodeElement() {
+        var code = $(this);
+        var pre = code.parent();
+
+        processClass(code);
+        processLineNumbers(code, pre);
+        processDataStart(code, pre);
+        processDataLine(code, pre);
+        processDataLineOffset(code, pre);
+    }
+
+    /**
+     * Apparently, Ghost removes everything after the first space in <code>'s class attribute.
+     * As a workaround, I use "." as a separator in Markdown and replace it with spaces here.
+     */
+    function processClass(code) {
+        code.attr('class', code.attr('class').replace(/\./g, " "));
+    }
+
+    /* Process line-numbers */
+    function processLineNumbers(code, pre) {
+        // Remove line-numbers from code and add it to pre
+        if (code.attr('class').indexOf("line-numbers") >= 0) {
+            code.attr('class', code.attr('class').replace("line-numbers", ""));
+            pre.addClass("line-numbers");
+        }
+    }
+
+    /* Process data-start */
+    function processDataStart(code, pre) {
+        // Remove data-start from code class and add it to pre as an attribute
+        var regex = /data-start="([0-9]+)"/;
+        var match = code.attr('class').match(regex);
+        if (match) {
+            code.attr('class', code.attr('class').replace(regex, ""));
+            pre.attr('data-start', match[1]);
+        }
+    }
+
+    /* Process data-line */
+    function processDataLine(code, pre) {
+        // Remove data-line from code class and add it to pre as an attribute
+        var regex = /data-line="(([0-9]|-|,)+)"/;
+        var match = code.attr('class').match(regex);
+        if (match) {
+            code.attr('class', code.attr('class').replace(regex, ""));
+            pre.attr('data-line', match[1]);
+        }
+    }
+
+    /* Process data-line-offset */
+    function processDataLineOffset(code, pre) {
+        // Remove data-line-offset from code class and add it to pre as an attribute
+        var regex = /data-line-offset="([0-9]+)"/;
+        var match = code.attr('class').match(regex);
+        if (match) {
+            code.attr('class', code.attr('class').replace(regex, ""));
+            pre.attr('data-line-offset', match[1]);
+        }
+    }
+
+})();
