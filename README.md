@@ -11,16 +11,16 @@ A programming-oriented theme for [Ghost](https://github.com/TryGhost/Ghost). Thi
 * Post comments using [Disqus](http://disqus.com/).
 * In-site search using [GhostHunter](https://github.com/i11ume/ghostHunter).
 * Support for [Font Awesome](https://github.com/FortAwesome/Font-Awesome).
-* Syntax highlighting using [Prism](https://github.com/LeaVerou/prism/).
+* Syntax highlighting using [Prism](https://github.com/LeaVerou/prism/), with Markdown support.
 
 ## Demo
 
 This theme is being used in my [blog](http://davidlecina.com/).
 
-*  ["Welcome to Ghost"](http://davidlecina.com/blog/welcome-to-ghost/).
-*  ["Using the Ghost editor"](http://davidlecina.com/blog/the-editor/).
-*  ["Advanced Markdown tips"](http://davidlecina.com/blog/advanced-markdown/).
-*  [Prism demo](http://davidlecina.com/blog/prism-demo/).
+*  ["Welcome to Ghost"](http://davidlecina.com/blog/welcome-to-ghost/)
+*  ["Using the Ghost editor"](http://davidlecina.com/blog/the-editor/)
+*  ["Advanced Markdown tips"](http://davidlecina.com/blog/advanced-markdown/)
+*  [Syntax highlighting demo](http://davidlecina.com/blog/prism-demo/)
 
 ## Compatibility
 
@@ -55,6 +55,10 @@ If the current version of StayPuft is not compatible with the version of Ghost y
 4. **How can I disable comments only on pages?**
 
   To disable comments only on pages, simply remove the line `{{> "post-comments"}}` from `page.hbs`.
+
+5. **How do I use Syntax Highlighting with Markdown?**
+
+  See the [Syntax highlighting demo](http://davidlecina.com/blog/prism-demo/).
 
 ## Development
 
