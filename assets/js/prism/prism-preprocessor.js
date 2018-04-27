@@ -1,4 +1,4 @@
-(function loadPrism() {
+(function runPrismPreprocessor() {
 
     /* Process all <code> elements */
     var codeElements = $('pre > code[class*=lang-], pre > code[class*=language-]'); // All code elements with class language-* or lang-*
