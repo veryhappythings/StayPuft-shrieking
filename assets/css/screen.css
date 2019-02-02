@@ -115,6 +115,7 @@ body {
     color: #fff;
     background: color(var(--darkgrey) l(-5%)) no-repeat center center;
     background-size: cover;
+    margin: 2em 0;
 }
 
 .site-header:before {
