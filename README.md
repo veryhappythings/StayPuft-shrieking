@@ -24,7 +24,7 @@ This theme is being used in my [blog](http://davidlecina.com/).
 
 ## Compatibility
 
-**The current StayPuft version is 2.2.1, is tested against Ghost 1.22.3 and is expected to work with Ghost 1.2.0.**
+**The current StayPuft version is 2.9.1, is tested against Ghost 2.13.1 and is expected to work down to Ghost 2.0.0.**
 
 If the current version of StayPuft is not compatible with the version of Ghost you're running, try looking for an older one in the [Releases section](https://github.com/dlecina/StayPuft/releases).
 
@@ -62,7 +62,7 @@ If the current version of StayPuft is not compatible with the version of Ghost y
 
 ## Development
 
-StayPuft styles are compiled using Gulp/PostCSS to polyfill future CSS spec. You'll need Node, Yarn and Gulp installed globally. After that, from the theme's root directory:
+StayPuft styles are compiled using Gulp/PostCSS to polyfill future CSS spec. You'll need [Node](https://nodejs.org/), [Yarn](https://yarnpkg.com/) and [Gulp](https://gulpjs.com) installed globally. After that, from the theme's root directory:
 
 ```bash
 $ yarn install
@@ -79,5 +79,5 @@ nodemon current/index.js --watch content/themes/StayPuft --ext hbs,js,css
 
 # Copyright & License
 
-Copyright (c) 2013-2018 Ghost Foundation - Released under the [MIT license](LICENSE).  
-Copyright (c) 2014-2018 David Lecina Fuentes - Released under the [MIT license](LICENSE).  
+Copyright (c) 2013-2019 Ghost Foundation - Released under the [MIT license](LICENSE).  
+Copyright (c) 2014-2019 David Lecina Fuentes - Released under the [MIT license](LICENSE).  
