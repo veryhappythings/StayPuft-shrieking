@@ -42,12 +42,14 @@
         "url": "https://github.com/dlecina/StayPuft.git"
     },
     "bugs": "https://github.com/dlecina/StayPuft/issues",
-    "contributors": ["https://github.com/dlecina/StayPuft/graphs/contributors"],
+    "contributors": [
+        "https://github.com/dlecina/StayPuft/graphs/contributors"
+    ],
     "devDependencies": {
         "autoprefixer": "6.3.6",
         "beeper": "^1.1.1",
         "cssnano": "3.7.1",
-        "gscan": "^2.0.0",
+        "gscan": "^2.2.1",
         "gulp": "3.9.1",
         "gulp-filter": "5.1.0",
         "gulp-livereload": "3.8.1",
@@ -83,5 +85,6 @@
                 "width": 2000
             }
         }
-    }
+    },
+    "dependencies": {}
 }
