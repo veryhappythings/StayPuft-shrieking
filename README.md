@@ -20,16 +20,9 @@ This theme is being used in my [blog](http://davidlecina.com/).
 *  ["Welcome to Ghost" post](http://davidlecina.com/blog/welcome-to-ghost/).
 *  [Prism demo](http://davidlecina.com/blog/prism-demo/).
 
-## Discussion
+## Compatibility
 
-* The appropriate place to report problems is the [Issues section](https://github.com/dlecina/StayPuft/issues).
-* To discuss other topics, please find an appropriate post in my blog's [Staypuft tag](http://davidlecina.com/blog/tag/staypuft/) and post a comment there.
-
-## Ghost Version
-
-StayPuft tries to match Casper's version numbering system. That is, StayPuft version A.B.C should roughly have the same (or more) features as Casper version A.B.C. Features and bug fixes may be added between major versions, so the best way to stay updated is to clone and pull changes from the repo.
-
-**The current StayPuft version is 1.3.5, and is expected to work with Ghost 0.9.0.**
+**The current StayPuft version is 1.3.6, is tested against Ghost 0.11.7 and is expected to work with Ghost 0.9.0.**
 
 If the current version of StayPuft is not compatible with the version of Ghost you're running, try looking for an older one in the [Releases section](https://github.com/dlecina/StayPuft/releases).
 
@@ -42,6 +35,26 @@ If the current version of StayPuft is not compatible with the version of Ghost y
 * In the Labs tab, enable the [Ghost Public API](http://support.ghost.org/public-api-beta/). This is required for search functionality.
 * In the General tab, upload and activate Staypuft.
 * (Optional) In the Code Injection tab, add any snippets you may need, such as [Google Analytics](http://academy.ghost.org/how-to-monitor-your-ghost-blogs-traffic/).
+
+If the process fails, try [installing the theme manually](https://www.ghostforbeginners.com/how-to-install-a-ghost-theme/#uploadmanually).
+
+## FAQ
+
+1. **Where should I report issues or request a new feature?**
+
+  The appropriate place to report issues or request new features is the [Issues section](https://github.com/dlecina/StayPuft/issues).
+
+2. **Where should I discuss other topics?**
+
+  To discuss other topics, please find an appropriate post in my blog's [Staypuft tag](http://davidlecina.com/blog/tag/staypuft/) and post a comment there.
+
+3. **How do I display an excerpt instead of full posts on the frontpage?**
+
+  This is [an](https://github.com/dlecina/StayPuft/issues/2) [often](https://github.com/dlecina/StayPuft/issues/13) [requested](https://github.com/dlecina/StayPuft/issues/18) [feature](https://github.com/dlecina/StayPuft/pull/21) and one that is not part of the theme _by design_. That being said, it is very easy to customize the theme to show excerpts and a Read More link:
+
+  * Open `partials/loop.hbs`.
+  * Replace `{{content}}` with `{{excerpt}}`.
+  * Add a Read More link wherever you want with `<a href="{{url}}">Read More</a>`.
 
 ## Copyright & License
 

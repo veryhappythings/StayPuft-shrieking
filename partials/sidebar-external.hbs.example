@@ -1,7 +1,7 @@
-<li><a href="https://example.com/"><i class="fa fa-github"></i>GitHub</a></li>
-<li><a href="https://example.com/"><i class="fa fa-linkedin"></i>LinkedIn</a></li>
-<li><a href="https://example.com/"><i class="fa fa-twitter"></i>Twitter</a></li>
-<li><a href="https://example.com/"><i class="fa fa-youtube-play"></i>YouTube</a></li>
-<li><a href="https://example.com/"><i class="fa fa-steam"></i>Steam</a></li>
-<li><a href="https://example.com/"><i class="fa fa-lastfm"></i>Last.fm</a></li>
-<li><a target="_blank" href="mailto:example@example.com"><i class="fa fa-envelope"></i>Contact</a></li>
+<li><a href="https://example.com/"><i class="fa fa-github"></i></a></li>
+<li><a href="https://example.com/"><i class="fa fa-linkedin"></i></a></li>
+<li><a href="https://example.com/"><i class="fa fa-twitter"></i></a></li>
+<li><a href="https://example.com/"><i class="fa fa-youtube-play"></i></a></li>
+<li><a href="https://example.com/"><i class="fa fa-steam"></i></a></li>
+<li><a href="https://example.com/"><i class="fa fa-lastfm"></i></a></li>
+<li><a target="_blank" href="mailto:example@example.com"><i class="fa fa-envelope"></i></a></li>

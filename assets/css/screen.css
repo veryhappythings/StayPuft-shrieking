@@ -173,7 +173,7 @@ a {
 }
 
 a:hover {
-    color: #222;
+    color: red;
 }
 
 h1 a, h2 a, h3 a,
@@ -291,6 +291,14 @@ pre code, pre tt {
     background: transparent;
     border: none;
     padding: 0;
+}
+
+pre + h3 {
+    margin-top: 1em;
+}
+
+pre + h4 {
+    margin-top: 1.33em;
 }
 
 kbd {
@@ -474,26 +482,12 @@ button {
    4. General - The main styles for the the theme
    ========================================================================== */
 
-#sidebar-content {
-    position: relative;
-    top: 4rem;
-}
-
 /* Yo-logo. Yolo-go. Upload one in ghost/settings/ */
 .blog-logo img {
     display: block;
-    max-height: 100px;
-    width: auto;
-    margin: 0 auto 10px auto;
-    line-height: 0;
-    border:3px solid #fff;
-    border-radius:50%;
-    border-radius:50%;
-    max-height:100px;
-    -webkit-transition:opacity .3s ease-in-out;
-    transition:opacity .3s ease-in-out;
-    -webkit-box-shadow:0 0 3px 3px rgba(0,0,0,.3),inset 0 0 40px 2px rgba(0,0,0,.3);
-    box-shadow:0 0 3px 3px rgba(0,0,0,.3),inset 0 0 40px 2px rgba(0,0,0,.3);
+    width: 100%;
+    height: auto;
+    margin: 1em auto 1em auto;
     -webkit-backface-visibility:hidden;
     -ms-backface-visibility:hidden;
     backface-visibility:hidden
@@ -662,17 +656,27 @@ button {
     line-height: 1.5em;
 }
 
-#sidebar
+#sidebar, #site-header
 {
     position: fixed;
-    top: 0px;
     left: 0px;
     width: 320px;
-    height: 100vh;
     z-index: 100;
     background-color: #0B4912;
-    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
-    overflow-y: auto;
+    overflow-y: hidden;
+}
+
+#site-header
+{
+    top: 0;
+    height: 100%;
+}
+
+#sidebar
+{
+    bottom: 0;
+    text-align: center;
+    padding-bottom: 1em;
 }
 
 main
@@ -699,7 +703,7 @@ main
 
 #search input
 {
-    width: 100%;
+    width: auto;
     font-size: 0.8em;
     border: none;
     border-radius: 12px;
@@ -708,14 +712,13 @@ main
     padding: 1px 30px 1px 10px;
 }
 
-#search:before {
+#search:after {
     color: #9EABB3;
     font-family: 'FontAwesome';
     content: "\f002"; /* fa-search */
-    font-size: 14px;
-    margin-top: 1px;
-    right: 10px;
-    position: absolute; /* must be set to absolute */
+    font-size: 0.9em;
+    right: 28px;
+    position: relative;
 }
 
 #search-results
@@ -756,34 +759,51 @@ main
     color: #BBB;
 }
 
-
-#sidebar-links
-{
-    text-overflow: ellipsis;
-}
-
 #sidebar-links ul
 {
-    color: #BBC4C9;
-    font-size: 13px;
+    font-size: 14px;
     list-style: none inside none;
     padding: 0;
 }
 
-#sidebar-links i
+#sidebar-links li
 {
-    width: 20px;
-    font-size: 14px;
+    display: inline-block;
 }
 
 #sidebar-links a
 {
-    color: #BBC4C9;
     text-decoration: none;
+    color: white;
+}
+
+#sidebar-links i
+{
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    display: inline-block;
+    border-radius: 50%;
+    background: white;
+    color: #22313F;
+    transition: all 0.3s ease;
+    margin: 0 8px; /* good with text */
+}
+
+#sidebar-external i
+{
+    margin: 0 2px; /* good with no text */
 }
 
 #sidebar-links a:hover
 {
+    color: red;
+
+}
+
+#sidebar-links a:hover i
+{
+    background: red;
     color: white;
 }
 
@@ -820,8 +840,8 @@ main
     display: inline;
 }
 
-/* ========================================================================== 
-   Tag Archive                                                                
+/* ==========================================================================
+   Tag Archive
    ========================================================================== */
 
 .tag-archive-header {
@@ -872,24 +892,24 @@ main
     display: none;
 }
 
-/* Stop elements, such as img wider than the post content, from 
-   creating horizontal scroll - slight hack due to imperfections 
+/* Stop elements, such as img wider than the post content, from
+   creating horizontal scroll - slight hack due to imperfections
    with browser width % calculations and rounding */
 .post-template .content,
 .page-template .content {
     overflow: hidden;
 }
 
-/* Keep images centered, and allow images wider than the main 
+/* Keep images centered, and allow images wider than the main
    text column to break out. */
 .post-content img {
     display: block;
     max-width: 126%;
     height: auto;
     padding: 0.6em 0;
-    /* Centers an image by (1) pushing its left edge to the 
-       center of its container and (2) shifting the entire image 
-       in the opposite direction by half its own width. 
+    /* Centers an image by (1) pushing its left edge to the
+       center of its container and (2) shifting the entire image
+       in the opposite direction by half its own width.
        Works for images that are larger than their containers. */
     position: relative;
     left: 50%;
@@ -1034,6 +1054,7 @@ main
 
 .post-cover {
     width: 100%;
+    margin-bottom: 1em;
 }
 
 .no-cover.post-head.main-header {
@@ -1545,17 +1566,27 @@ main
 /* Media Queries for changing from Vertical to Horizontal cover               */
 
 @media only screen and (max-width: 1279px) {
-    #sidebar {
+
+    #sidebar, #site-header {
         position: relative;
-        text-align: center;
         width: 100%;
         height: auto;
         padding: 16px 0px;
+        top: 0;
     }
 
-    #sidebar-content {
-        position: relative:;
-        top: 0px;
+    .blog-logo {
+        float: left;
+    }
+
+    .blog-logo img {
+        width: 80px;
+        height: auto;
+        margin: 0 8px 8px 0px;
+    }
+
+    .blog-title {
+        padding-top: 10px;
     }
 
     main {
@@ -1567,10 +1598,10 @@ main
         width: 100%;
     }
 
-    #sidebar-links li {
-        display: inline-block;
-        margin: 0px 4px;
+    .pagination {
+        margin: 0;
     }
+
 }
 
 /* ========================================================================== */
@@ -1635,10 +1666,6 @@ main
 
 
 @media only screen and (max-width: 500px) {
-
-    .blog-logo img {
-        max-height: 80px;
-    }
 
     .inner,
     .pagination {
@@ -1751,7 +1778,7 @@ main
     .gh-subscribe form {
         margin-top: 10px;
     }
-    
+
 }
 
 
